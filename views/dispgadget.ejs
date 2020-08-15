@@ -1,0 +1,34 @@
+<style type="text/css">
+body{background-image:url('images/p14.jpg');
+background-position:center center;
+background-size:cover ;
+
+	
+}
+label
+{
+color:black;
+font-family:"Comic Sans MS";
+font-size:20px;
+}
+
+ul{text-decoration:none;
+  color:black;
+  font-size:15px;
+  font-family:"Comic Sans MS";
+  }
+
+</style>
+
+<label>List of Gadget Products:</label>
+  <ul class="gadgets">
+  <% for(var i=0; i<gadgets.length; i++) {%>
+    <li class="gadgets">
+      <span><%= " ID: " +gadgets[i].gadgetid+"."%></span>
+      <span><%=" Name: " + gadgets[i].gadgetname%></span>
+      <span><%=" Price: " + gadgets[i].gadgetprice%></span>
+      <span><%=" Origin: " + gadgets[i].gadgetorigin%></span>
+      <span><%=" Description: " + gadgets[i].gadgetdesc%></span>
+    </li>
+  <% } %>
+</ul>

@@ -1,0 +1,36 @@
+<html>  
+<body>  
+<style type="text/css">
+body{background-image:url('images/p12.jpg');
+background-repeat:no-repeat;
+background-position:center center;
+background-size:cover ;
+
+	
+}
+label
+{
+color:black;
+font-family:"Comic Sans MS";
+font-size:20px;
+}
+
+ul{text-decoration:none;
+  color:black;
+  font-size:15px;
+  font-family:"Comic Sans MS";
+ }
+
+</style>
+<label>BabyCare Products:</label>
+  <ul class="babycare">
+  <% for(var i=0; i<babycare.length; i++) {%>
+    <li class="babycare">
+      <span><%= " ID: " +babycare[i].babyid+"."%></span><tb>
+      <span><%=" Name: " + babycare[i].babyname%> </span><tb>
+      <span><%= " Price: " +babycare[i].babyprice+"."%></span><tb>
+      <span><%= " Origin: " +babycare[i].babyorigin+"."%></span><tb>
+      <span><%= " Description: " +babycare[i].babydesc+"."%></span><tb>
+    </li>
+  <% } %>
+</ul>

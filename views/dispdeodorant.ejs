@@ -1,0 +1,34 @@
+<style type="text/css">
+body{background-image:url('images/p13.jpg');
+background-position:center center;
+background-size:cover ;
+
+	
+}
+label
+{
+color:white;
+font-family:"Comic Sans MS";
+font-size:20px;
+}
+
+ul{text-decoration:none;
+  color:white;
+  font-size:15px;
+  font-family:"Comic Sans MS";
+  }
+
+</style>
+
+<label>List of Deodorant Products:</label>
+  <ul class="deodorants">
+  <% for(var i=0; i<deodorants.length; i++) {%>
+    <li class="deodorants">
+      <span><%= " ID: " +deodorants[i].deoid+"."%></span>
+      <span><%=" Name: " + deodorants[i].deoname%></span>
+      <span><%=" Price: " + deodorants[i].deoprice%></span>
+      <span><%=" Origin: " + deodorants[i].deoorigin%></span>
+      <span><%=" Description: " + deodorants[i].deodesc%></span>
+    </li>
+  <% } %>
+</ul>

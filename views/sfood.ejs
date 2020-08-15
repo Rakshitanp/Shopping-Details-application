@@ -1,0 +1,12 @@
+<label>Food Products:</label>
+  <ul class="foods">
+  <% for(var docs=0; docs<foods.length; docs++) {if (foods[docs].foodid==foodid){%>
+    <li class="foods">
+      <span><%= " ID: " +foods[docs].foodid+"."%></span>
+      <span><%=" Name: " + foods[docs].foodname%></span>
+      <span><%=" Price: " + foods[docs].foodprice%></span>
+      <span><%=" Origin: " + foods[docs].foodorigin%></span>
+      <span><%=" Description: " + foods[docs].fooddesc%></span>
+    </li>
+  <% }} %>
+</ul>

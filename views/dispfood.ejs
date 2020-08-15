@@ -1,0 +1,34 @@
+<style type="text/css">
+body{background-image:url('images/p11.jpg');
+background-position:center center;
+background-size:cover ;
+
+	
+}
+label
+{
+color:black;
+font-family:"Comic Sans MS";
+font-size:20px;
+}
+
+ul{text-decoration:none;
+  color:black;
+  font-size:15px;
+  font-family:"Comic Sans MS";
+  
+}
+
+</style>
+<label>List of Food Products:</label>
+  <ul class="foods">
+  <% for(var i=0; i<foods.length; i++) {%>
+    <li class="foods">
+      <span><%= " ID: " +foods[i].foodid+"."%></span>
+      <span><%=" Name: " + foods[i].foodname%></span>
+      <span><%=" Price: " + foods[i].foodprice%></span>
+      <span><%=" Origin: " + foods[i].foodorigin%></span>
+      <span><%=" Description: " + foods[i].fooddesc%></span>
+    </li>
+  <% } %>
+</ul>
