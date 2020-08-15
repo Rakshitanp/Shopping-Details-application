@@ -1,0 +1,43 @@
+<html>  
+<body>  
+<style type="text/css">  
+body{background-image:url('images/p11.jpg');
+background-repeat:no-repeat;
+background-position:center center;
+background-size:cover ;
+
+}
+label
+{
+color:white;
+font-family:"Comic Sans MS";
+}
+h1{
+color:black;
+font-size:40px
+}
+a{text-decoration:none;
+  color:black;
+  font-size:20px;
+  font-family:"Comic Sans MS";
+  background-color:white;
+  width:240px;
+  height:35px;}
+</style> 
+<form action="updatefood" method="get">  
+<center>
+<br>
+<h1><center>UPDATE</center></h1><br>
+<center>
+<h3>Enter Food ID:</h3> <input type="text" name="foodid" autocomplete="off" required/>  <br><br>
+<h3>Enter New Food name: </h3><input type="text" name="newfood" autocomplete="off" required/> <br><br>
+<h3>Enter New Food price:</h3> <input type="text" name="newprice" autocomplete="off" placeholder="Enter numerical value" pattern="[0-9]*" required/> <br><br>
+<h3>Enter New Food origin:</h3> <input type="text" name="neworigin" autocomplete="off" required/> <br><br>
+<input type="submit" value="Submit">  
+</form>  
+<center> 
+<br>
+<a href="/update1.html">Back</a>
+</center>
+</body>  
+</html>  

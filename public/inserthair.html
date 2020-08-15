@@ -1,0 +1,85 @@
+<html>
+<head>
+	<script src="angular/angular.min.js"> </script>
+</head>
+<script> var myModule = angular.module("myApp",[])  </script>
+<body ng-app="myApp">
+	<style type="text/css">
+body{background-image:url('images/p15.jpg');
+background-repeat:no-repeat;
+background-position:center center;
+background-size:cover ;
+	
+}
+label
+{
+color:black;
+font-family:"Comic Sans MS";
+}
+h1{
+color:black;
+font-size:40px
+}
+a{text-decoration:none;
+  color:black;
+  font-size:20px;
+  font-family:"Comic Sans MS";
+  background-color:white;
+  width:240px;
+  height:35px;}
+
+</style>
+    <form ng-controller='appController' ng-submit="send()">
+      <!--send() function from the controller is called on form submission -->
+     <center>
+	<h1>INSERT</h1><br><br>
+		<label for="hairid" >HairCare Product ID: </label><br />
+            <input type="text" id="hairid" ng-model="data.hairid" autocomplete="off" required/> <br /></br>
+        <label for="hairname">HairCare Product Name:</label><br />
+                <input type="text" id="hairname" ng-model="data.hairname" autocomplete="off" required/> <br /> <br />
+	<label for="hairprice">HairCare Product Price:</label><br />
+                <input type="text" id="hairprice" ng-model="data.hairprice" autocomplete="off" pattern="[0-9]*" placeholder="Enter numeric value" required/> <br /> <br />
+	<label for="hairorigin">HairCare Product Origin:</label><br />
+                <input type="text" id="hairorigin" ng-model="data.hairorigin" autocomplete="off" required/> <br /> <br />
+	<label for="hairdesc">HairCare Product Description:</label><br />
+                <input type="text" id="hairdesc" ng-model="data.hairdesc" autocomplete="off" required/> <br /> <br />        
+        <input type="submit" ng-click="Submit">
+	</center>	
+       <div><pre>{{response.data}}</pre>  </div>
+    </form>
+ 
+<center><a href="insert1.html">Back</a></center>
+     <script>
+	 myModule.controller ("appController",
+        function appController($scope, $http) {
+            /*$http directive is used to communicate to the server */
+            $scope.data = {}
+            $scope.response = {}
+			
+            $scope.send = function () {
+                /*executed when submit is clicked*/          
+				console.log($scope.data.empname);
+                var posting = $http({
+			/*posting to /process_get  */
+                    //method: 'GET',
+                    //url: '/process_get_haircare',
+                    //params: $scope.data,
+			/*posting to /process_post*/
+                    method: 'POST',
+                    url: '/process_post_haircare',
+                    data: $scope.data,
+                    
+                }).then (function (response) {
+                    /*executed when server responds back*/
+                    console.log(response);
+                    $scope.response.data = response.data;
+                },function (error){
+					console.log(error);
+			});
+            }
+        });
+    </script>
+</body>
+</html>
+
+ 
